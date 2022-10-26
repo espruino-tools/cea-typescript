@@ -61,7 +61,7 @@ const createDisconnectionButton = () => {
       disconnectCallback();
       let connectBtn = document.getElementById("esp-connect");
       disconnectButton.className = "hidden";
-      connectBtn.classList.add("esp-btn green");
+      connectBtn.className = "esp-btn green";
     });
   };
   elements.push(disconnectButton);
@@ -91,7 +91,7 @@ const createConnectionButton = () => {
         connectCallback();
         let disconnectBtn = document.getElementById("esp-disconnect");
         connectButton.className = "hidden";
-        disconnectBtn.classList.add("esp-btn red");
+        disconnectBtn.className = "esp-btn red";
       }
     });
   };
