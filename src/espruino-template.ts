@@ -1,4 +1,4 @@
-import { DeviceController } from "@espruino-tools/device-controller";
+import { DeviceController } from "@espruino-tools/core";
 const device = new DeviceController();
 
 var elements = [];
