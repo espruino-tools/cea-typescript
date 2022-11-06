@@ -6,5 +6,6 @@ window.onload = function () {
   let p = new Connector();
 
   p.connectData();
+  p.connectVideo()
   showTemplate();
 };
