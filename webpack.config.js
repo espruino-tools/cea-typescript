@@ -15,7 +15,7 @@ process.env.NODE_ENV = "development";
 
 module.exports = () => ({
   mode: "development",
-  entry: { "./src/index": "./src/index.ts", "./src/peer": "./src/peer.ts" },
+  entry: { "./src/index": "./src/index.ts" },
   output: {
     path: path.join(__dirname, "build"),
     filename: "[name].js",
@@ -36,22 +36,12 @@ module.exports = () => ({
   },
   devServer: {
     historyApiFallback: true,
-    onBeforeSetupMiddleware: function (devServer) {
-      devServer.app.get("/peer.html", function (req, res) {
-        res.sendFile(path.join(__dirname + "/public/peer.html"));
-      });
-    },
   },
   plugins: [
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: "public/index.html",
       chunks: ["main"],
-    }),
-    new HtmlWebpackPlugin({
-      filename: "peer.html",
-      template: "public/peer.html",
-      chunks: ["connector"],
     }),
     new webpack.DefinePlugin({
       "process.env": JSON.stringify(process.env),
